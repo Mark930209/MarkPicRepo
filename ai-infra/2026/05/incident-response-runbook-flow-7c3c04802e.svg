@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1120" viewBox="0 0 2400 1120" role="img" aria-label="AI 事故响应 Runbook：先按症状分流，再定位模型、GPU 和质量证据">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="2292" height="1032" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">AI 事故响应 Runbook：先按症状分流，再定位模型、GPU 和质量证据</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">把延迟飙升、GPU OOM 和质量下降三类事故拆成可执行的排查路径与恢复动作</tspan></text>
+    <line x1="92" y1="150.0" x2="2308" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g><path id="edge-path-0" class="edge-path edge-flow" d="M 430.0 555.0 C 442.5 555.0, 442.5 555.0, 455.0 555.0" marker-end="url(#arrow)" /><path id="edge-path-1" class="edge-path edge-flow" d="M 805.0 555.0 C 817.5 555.0, 817.5 235.0, 830.0 235.0" marker-end="url(#arrow)" /><path id="edge-path-2" class="edge-path edge-flow" d="M 805.0 555.0 C 817.5 555.0, 817.5 555.0, 830.0 555.0" marker-end="url(#arrow)" /><path id="edge-path-3" class="edge-path edge-flow" d="M 805.0 555.0 C 817.5 555.0, 817.5 875.0, 830.0 875.0" marker-end="url(#arrow)" /><path id="edge-path-4" class="edge-path edge-flow" d="M 1180.0 235.0 C 1215.7 235.0, 1229.3 555.0, 1265.0 555.0" marker-end="url(#arrow)" /><path id="edge-path-5" class="edge-path edge-flow" d="M 1180.0 555.0 C 1215.7 555.0, 1229.3 555.0, 1265.0 555.0" marker-end="url(#arrow)" /><path id="edge-path-6" class="edge-path edge-flow" d="M 1180.0 875.0 C 1215.7 875.0, 1229.3 555.0, 1265.0 555.0" marker-end="url(#arrow)" /><path id="edge-path-7" class="edge-path edge-flow" d="M 1615.0 555.0 C 1627.5 555.0, 1627.5 555.0, 1640.0 555.0" marker-end="url(#arrow)" /><path id="edge-path-8" class="edge-path edge-flow" d="M 1990.0 555.0 C 2002.5 555.0, 2002.5 395.0, 2015.0 395.0" marker-end="url(#arrow)" /><path id="edge-path-9" class="edge-path edge-flow" d="M 1990.0 555.0 C 2002.5 555.0, 2002.5 715.0, 2015.0 715.0" marker-end="url(#arrow)" /><path id="edge-path-10" class="edge-path edge-flow" d="M 2365.0 715.0 C 1562.8 715.0, 1257.2 555.0, 455.0 555.0" marker-end="url(#arrow)" /></g>
+  <g><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#edge-path-0" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.35s" repeatCount="indefinite"><mpath href="#edge-path-1" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.70s" repeatCount="indefinite"><mpath href="#edge-path-2" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite"><mpath href="#edge-path-3" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.40s" repeatCount="indefinite"><mpath href="#edge-path-4" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.75s" repeatCount="indefinite"><mpath href="#edge-path-5" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.10s" repeatCount="indefinite"><mpath href="#edge-path-6" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.45s" repeatCount="indefinite"><mpath href="#edge-path-7" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.80s" repeatCount="indefinite"><mpath href="#edge-path-8" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.15s" repeatCount="indefinite"><mpath href="#edge-path-9" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.50s" repeatCount="indefinite"><mpath href="#edge-path-10" /></animateMotion></circle></g>
+  <g>
+            <g transform="translate(80.0,480.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">入</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">事故入口</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">告警、用户反馈</tspan><tspan x="76.0" dy="21.0">成本异常或质量采样</tspan></text>
+            </g>
+            
+            <g transform="translate(455.0,480.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">分</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">影响分诊</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">影响范围、SLO 破线、最近变更</tspan><tspan x="76.0" dy="21.0">owner</tspan></text>
+            </g>
+            
+            <g transform="translate(830.0,160.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">慢</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">延迟飙升路径</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">queue time → TTFT/TPOT → KV</tspan><tspan x="76.0" dy="21.0">cache → 长请求</tspan></text>
+            </g>
+            
+            <g transform="translate(830.0,480.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">显</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">GPU OOM 路径</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">Pod event → restart →</tspan><tspan x="76.0" dy="21.0">模型加载 → batch 上限</tspan></text>
+            </g>
+            
+            <g transform="translate(830.0,800.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">质</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">质量下降路径</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">prompt_version →</tspan><tspan x="76.0" dy="21.0">index_version → trace 样本…</tspan></text>
+            </g>
+            
+            <g transform="translate(1265.0,480.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">缓</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">先缓解影响</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">摘流量、降级、回滚、扩容或限流</tspan></text>
+            </g>
+            
+            <g transform="translate(1640.0,480.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">证</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">保留证据</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">指标窗口、trace 样本、版本 diff</tspan><tspan x="76.0" dy="21.0">用户影响</tspan></text>
+            </g>
+            
+            <g transform="translate(2015.0,320.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">复</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">无责复盘</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">为什么没提前发现</tspan><tspan x="76.0" dy="21.0">为什么没自动恢复</tspan></text>
+            </g>
+            
+            <g transform="translate(2015.0,640.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">固</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">防线更新</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">SLO 阈值、runbook、回归集</tspan><tspan x="76.0" dy="21.0">发布门禁</tspan></text>
+            </g>
+            </g>
+  <g><rect x="411.7" y="508.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="442.5" y="523.0" text-anchor="middle"><tspan x="442.5" dy="0.0">确认症状</tspan></text><rect x="804.5" y="348.0" width="25.9" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="817.5" y="363.0" text-anchor="middle"><tspan x="817.5" dy="0.0">慢</tspan></text><rect x="792.6" y="508.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="817.5" y="523.0" text-anchor="middle"><tspan x="817.5" dy="0.0">不可用</tspan></text><rect x="783.4" y="668.0" width="68.1" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="817.5" y="683.0" text-anchor="middle"><tspan x="817.5" dy="0.0">答错/拒答</tspan></text><rect x="1188.4" y="348.0" width="68.1" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1222.5" y="363.0" text-anchor="middle"><tspan x="1222.5" dy="0.0">排队/调度</tspan></text><rect x="1188.4" y="508.0" width="68.1" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1222.5" y="523.0" text-anchor="middle"><tspan x="1222.5" dy="0.0">容量/配置</tspan></text><rect x="1188.4" y="668.0" width="68.1" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1222.5" y="683.0" text-anchor="middle"><tspan x="1222.5" dy="0.0">回滚/冻结</tspan></text><rect x="1602.7" y="508.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1627.5" y="523.0" text-anchor="middle"><tspan x="1627.5" dy="0.0">稳定后</tspan></text><rect x="1983.6" y="428.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="2002.5" y="443.0" text-anchor="middle"><tspan x="2002.5" dy="0.0">复盘</tspan></text><rect x="1983.6" y="588.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="2002.5" y="603.0" text-anchor="middle"><tspan x="2002.5" dy="0.0">改进</tspan></text><rect x="1373.2" y="588.0" width="73.5" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1410.0" y="603.0" text-anchor="middle"><tspan x="1410.0" dy="0.0">下一次更快</tspan></text></g>
+</svg>
