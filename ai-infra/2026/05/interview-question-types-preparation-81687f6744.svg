@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2380" height="1080" viewBox="0 0 2380 1080" role="img" aria-label="AI Infra 面试准备：系统设计、Debug 和取舍判断三类题各看不同证据">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="2272" height="992" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">AI Infra 面试准备：系统设计、Debug 和取舍判断三类题各看不同证据</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">把高频面试题分成系统设计、故障排查和工程取舍三类，并映射到准备材料和作品集证据</tspan></text>
+    <line x1="92" y1="150.0" x2="2288" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g><path id="edge-path-0" class="edge-path edge-flow" d="M 430.0 515.0 C 459.4 515.0, 470.6 245.0, 500.0 245.0" marker-end="url(#arrow)" /><path id="edge-path-1" class="edge-path edge-flow" d="M 430.0 515.0 C 459.4 515.0, 470.6 515.0, 500.0 515.0" marker-end="url(#arrow)" /><path id="edge-path-2" class="edge-path edge-flow" d="M 430.0 515.0 C 459.4 515.0, 470.6 785.0, 500.0 785.0" marker-end="url(#arrow)" /><path id="edge-path-3" class="edge-path edge-flow" d="M 850.0 245.0 C 883.6 245.0, 896.4 245.0, 930.0 245.0" marker-end="url(#arrow)" /><path id="edge-path-4" class="edge-path edge-flow" d="M 850.0 515.0 C 883.6 515.0, 896.4 515.0, 930.0 515.0" marker-end="url(#arrow)" /><path id="edge-path-5" class="edge-path edge-flow" d="M 850.0 785.0 C 883.6 785.0, 896.4 785.0, 930.0 785.0" marker-end="url(#arrow)" /><path id="edge-path-6" class="edge-path edge-flow" d="M 1280.0 245.0 C 1313.6 245.0, 1326.4 515.0, 1360.0 515.0" marker-end="url(#arrow)" /><path id="edge-path-7" class="edge-path edge-flow" d="M 1280.0 515.0 C 1313.6 515.0, 1326.4 515.0, 1360.0 515.0" marker-end="url(#arrow)" /><path id="edge-path-8" class="edge-path edge-flow" d="M 1280.0 785.0 C 1313.6 785.0, 1326.4 515.0, 1360.0 515.0" marker-end="url(#arrow)" /><path id="edge-path-9" class="edge-path edge-flow" d="M 1710.0 515.0 C 1743.6 515.0, 1756.4 515.0, 1790.0 515.0" marker-end="url(#arrow)" /></g>
+  <g><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#edge-path-0" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.35s" repeatCount="indefinite"><mpath href="#edge-path-1" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.70s" repeatCount="indefinite"><mpath href="#edge-path-2" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite"><mpath href="#edge-path-3" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.40s" repeatCount="indefinite"><mpath href="#edge-path-4" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.75s" repeatCount="indefinite"><mpath href="#edge-path-5" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.10s" repeatCount="indefinite"><mpath href="#edge-path-6" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.45s" repeatCount="indefinite"><mpath href="#edge-path-7" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.80s" repeatCount="indefinite"><mpath href="#edge-path-8" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.15s" repeatCount="indefinite"><mpath href="#edge-path-9" /></animateMotion></circle></g>
+  <g>
+            <g transform="translate(80.0,440.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">面</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">AI Infra 面试</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">不是问会多少工具，而是看判断链路</tspan></text>
+            </g>
+            
+            <g transform="translate(500.0,170.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">设</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">系统设计题</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">设计 LLM 服务、RAG 平台</tspan><tspan x="76.0" dy="21.0">模型发布和监控</tspan></text>
+            </g>
+            
+            <g transform="translate(500.0,440.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">排</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">Debug 场景题</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">TTFT 飙升、GPU OOM、召回漂移</tspan><tspan x="76.0" dy="21.0">成本异常</tspan></text>
+            </g>
+            
+            <g transform="translate(500.0,710.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">舍</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">取舍判断题</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">量化、路由、batch、模型升级</tspan><tspan x="76.0" dy="21.0">SLO 成本</tspan></text>
+            </g>
+            
+            <g transform="translate(930.0,170.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">图</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">准备架构证据</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">边界、数据流、SLO</tspan><tspan x="76.0" dy="21.0">回滚和权限模型</tspan></text>
+            </g>
+            
+            <g transform="translate(930.0,440.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">证</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">准备排障证据</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">指标截图、trace、假设</tspan><tspan x="76.0" dy="21.0">验证和修复记录</tspan></text>
+            </g>
+            
+            <g transform="translate(930.0,710.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">表</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">准备取舍证据</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">成本公式、质量评测</tspan><tspan x="76.0" dy="21.0">延迟分位数和风险表</tspan></text>
+            </g>
+            
+            <g transform="translate(1360.0,440.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">集</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">作品集材料</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">真实问题、数据支撑</tspan><tspan x="76.0" dy="21.0">迭代过程和复盘</tspan></text>
+            </g>
+            
+            <g transform="translate(1790.0,440.0)">
+              <rect width="350.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">答</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">面试回答结构</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">先澄清目标，再列约束，最后给验证</tspan><tspan x="76.0" dy="21.0">路径</tspan></text>
+            </g>
+            </g>
+  <g><rect x="446.1" y="333.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="465.0" y="348.0" text-anchor="middle"><tspan x="465.0" dy="0.0">题型</tspan></text><rect x="446.1" y="468.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="465.0" y="483.0" text-anchor="middle"><tspan x="465.0" dy="0.0">题型</tspan></text><rect x="446.1" y="603.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="465.0" y="618.0" text-anchor="middle"><tspan x="465.0" dy="0.0">题型</tspan></text><rect x="871.1" y="198.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="890.0" y="213.0" text-anchor="middle"><tspan x="890.0" dy="0.0">准备</tspan></text><rect x="871.1" y="468.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="890.0" y="483.0" text-anchor="middle"><tspan x="890.0" dy="0.0">准备</tspan></text><rect x="871.1" y="738.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="890.0" y="753.0" text-anchor="middle"><tspan x="890.0" dy="0.0">准备</tspan></text><rect x="1301.1" y="333.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1320.0" y="348.0" text-anchor="middle"><tspan x="1320.0" dy="0.0">证据</tspan></text><rect x="1301.1" y="468.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1320.0" y="483.0" text-anchor="middle"><tspan x="1320.0" dy="0.0">证据</tspan></text><rect x="1301.1" y="603.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1320.0" y="618.0" text-anchor="middle"><tspan x="1320.0" dy="0.0">证据</tspan></text><rect x="1731.1" y="468.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1750.0" y="483.0" text-anchor="middle"><tspan x="1750.0" dy="0.0">组织</tspan></text></g>
+</svg>
