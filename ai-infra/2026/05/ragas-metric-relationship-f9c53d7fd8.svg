@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="960" viewBox="0 0 1880 960" role="img" aria-label="Ragas 指标关系：先分清是召回坏了还是生成坏了">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="1772" height="872" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">Ragas 指标关系：先分清是召回坏了还是生成坏了</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">context_precision、context_recall、faithfulness 和 answer_relevance 对应 RAG 链路里的不同修复入口</tspan></text>
+    <line x1="92" y1="150.0" x2="1788" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g><path id="edge-path-0" class="edge-path edge-flow" d="M 470.0 325.0 C 507.8 325.0, 522.2 325.0, 560.0 325.0" marker-end="url(#arrow)" /><path id="edge-path-1" class="edge-path edge-flow" d="M 890.0 325.0 C 927.8 325.0, 942.2 325.0, 980.0 325.0" marker-end="url(#arrow)" /><path id="edge-path-2" class="edge-path edge-flow" d="M 1310.0 325.0 C 1347.8 325.0, 1362.2 325.0, 1400.0 325.0" marker-end="url(#arrow)" /><path id="edge-path-3" class="edge-path edge-flow" d="M 890.0 325.0 C 663.2 325.0, 576.8 615.0, 350.0 615.0" marker-end="url(#arrow)" /><path id="edge-path-4" class="edge-path edge-flow" d="M 1730.0 325.0 C 1326.8 325.0, 1173.2 615.0, 770.0 615.0" marker-end="url(#arrow)" /><path id="edge-path-5" class="edge-path edge-flow" d="M 890.0 325.0 C 1016.0 325.0, 1064.0 615.0, 1190.0 615.0" marker-end="url(#arrow)" /><path id="edge-path-6" class="edge-path edge-flow" d="M 1310.0 325.0 C 1259.6 325.0, 1240.4 615.0, 1190.0 615.0" marker-end="url(#arrow)" /><path id="edge-path-7" class="edge-path edge-flow" d="M 470.0 325.0 C 596.0 325.0, 644.0 835.0, 770.0 835.0" marker-end="url(#arrow)" /><path id="edge-path-8" class="edge-path edge-flow" d="M 680.0 615.0 C 894.2 615.0, 975.8 835.0, 1190.0 835.0" marker-end="url(#arrow)" /><path id="edge-path-9" class="edge-path edge-flow" d="M 1100.0 615.0 C 1137.8 615.0, 1152.2 835.0, 1190.0 835.0" marker-end="url(#arrow)" /><path id="edge-path-10" class="edge-path edge-flow" d="M 1520.0 615.0 C 1381.4 615.0, 1328.6 835.0, 1190.0 835.0" marker-end="url(#arrow)" /><path id="edge-path-11" class="edge-path edge-flow" d="M 1100.0 835.0 C 1137.8 835.0, 1152.2 835.0, 1190.0 835.0" marker-end="url(#arrow)" /></g>
+  <g><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#edge-path-0" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.35s" repeatCount="indefinite"><mpath href="#edge-path-1" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.70s" repeatCount="indefinite"><mpath href="#edge-path-2" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite"><mpath href="#edge-path-3" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.40s" repeatCount="indefinite"><mpath href="#edge-path-4" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.75s" repeatCount="indefinite"><mpath href="#edge-path-5" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.10s" repeatCount="indefinite"><mpath href="#edge-path-6" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.45s" repeatCount="indefinite"><mpath href="#edge-path-7" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.80s" repeatCount="indefinite"><mpath href="#edge-path-8" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.15s" repeatCount="indefinite"><mpath href="#edge-path-9" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.50s" repeatCount="indefinite"><mpath href="#edge-path-10" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.85s" repeatCount="indefinite"><mpath href="#edge-path-11" /></animateMotion></circle></g>
+  <g>
+            <g transform="translate(140.0,250.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">Q</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">用户问题</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">query · 意图和约束的来源</tspan></text>
+            </g>
+            
+            <g transform="translate(560.0,250.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">C</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">召回上下文</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">retrieved contexts</tspan><tspan x="76.0" dy="21.0">证据是否相关且完整</tspan></text>
+            </g>
+            
+            <g transform="translate(980.0,250.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">A</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">生成答案</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">answer</tspan><tspan x="76.0" dy="21.0">是否回答问题且有依据</tspan></text>
+            </g>
+            
+            <g transform="translate(1400.0,250.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">R</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">参考事实</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">ground truth/reference</tspan><tspan x="76.0" dy="21.0">评测集中的期望依据</tspan></text>
+            </g>
+            
+            <g transform="translate(350.0,540.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">P</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">context_precision</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">召回内容排序是否把相关证据放</tspan><tspan x="76.0" dy="21.0">前面</tspan></text>
+            </g>
+            
+            <g transform="translate(770.0,540.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">R</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">context_recall</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">必要事实是否被召回到 context</tspan><tspan x="76.0" dy="21.0">里</tspan></text>
+            </g>
+            
+            <g transform="translate(1190.0,540.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">F</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">faithfulness</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">答案是否由 context</tspan><tspan x="76.0" dy="21.0">支撑，少编造</tspan></text>
+            </g>
+            
+            <g transform="translate(770.0,760.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">AR</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">answer_relevance</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">答案是否真正回应 query 的意图</tspan></text>
+            </g>
+            
+            <g transform="translate(1190.0,760.0)">
+              <rect width="330.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">修</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">修复入口</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">chunk / embedding / rerank</tspan><tspan x="76.0" dy="21.0">/ prompt 分开改</tspan></text>
+            </g>
+            </g>
+  <g><rect x="496.1" y="278.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="515.0" y="293.0" text-anchor="middle"><tspan x="515.0" dy="0.0">检索</tspan></text><rect x="904.2" y="278.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="935.0" y="293.0" text-anchor="middle"><tspan x="935.0" dy="0.0">提供证据</tspan></text><rect x="1324.2" y="278.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1355.0" y="293.0" text-anchor="middle"><tspan x="1355.0" dy="0.0">对齐事实</tspan></text><rect x="589.2" y="423.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="620.0" y="438.0" text-anchor="middle"><tspan x="620.0" dy="0.0">相关排序</tspan></text><rect x="1219.2" y="423.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1250.0" y="438.0" text-anchor="middle"><tspan x="1250.0" dy="0.0">事实覆盖</tspan></text><rect x="1009.2" y="423.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1040.0" y="438.0" text-anchor="middle"><tspan x="1040.0" dy="0.0">证据支撑</tspan></text><rect x="1225.2" y="423.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1250.0" y="438.0" text-anchor="middle"><tspan x="1250.0" dy="0.0">少幻觉</tspan></text><rect x="589.2" y="533.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="620.0" y="548.0" text-anchor="middle"><tspan x="620.0" dy="0.0">回应意图</tspan></text><rect x="898.2" y="678.0" width="73.5" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="935.0" y="693.0" text-anchor="middle"><tspan x="935.0" dy="0.0">改检索排序</tspan></text><rect x="1087.4" y="678.0" width="115.2" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1145.0" y="693.0" text-anchor="middle"><tspan x="1145.0" dy="0.0">改切分/embedding</tspan></text><rect x="1301.3" y="678.0" width="107.4" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1355.0" y="693.0" text-anchor="middle"><tspan x="1355.0" dy="0.0">改证据和 prompt</tspan></text><rect x="1097.2" y="788.0" width="95.5" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1145.0" y="803.0" text-anchor="middle"><tspan x="1145.0" dy="0.0">改 query 理解</tspan></text></g>
+</svg>
