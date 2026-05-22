@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="820" viewBox="0 0 1860 820" role="img" aria-label="AI 系统不能直接套普通 Web 服务经验的三条边界">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="1752" height="732" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">AI 系统不能直接套普通 Web 服务经验的三条边界</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">输出确定性、GPU 资源模型、制品依赖和观测信号都与普通 Web 服务不同</tspan></text>
+    <line x1="92" y1="150.0" x2="1768" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g><path id="edge-path-0" class="edge-path edge-flow" d="M 460.0 337.0 C 317.2 337.0, 262.8 577.0, 120.0 577.0" marker-end="url(#arrow)" /><path id="edge-path-1" class="edge-path edge-flow" d="M 875.0 337.0 C 732.2 337.0, 677.8 577.0, 535.0 577.0" marker-end="url(#arrow)" /><path id="edge-path-2" class="edge-path edge-flow" d="M 1290.0 337.0 C 1147.2 337.0, 1092.8 577.0, 950.0 577.0" marker-end="url(#arrow)" /><path id="edge-path-3" class="edge-path edge-flow" d="M 1705.0 337.0 C 1562.2 337.0, 1507.8 577.0, 1365.0 577.0" marker-end="url(#arrow)" /></g>
+  <g><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#edge-path-0" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.35s" repeatCount="indefinite"><mpath href="#edge-path-1" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.70s" repeatCount="indefinite"><mpath href="#edge-path-2" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite"><mpath href="#edge-path-3" /></animateMotion></circle></g>
+  <g>
+            <g transform="translate(120.0,260.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">W1</tspan></text>
+              <text class="node-title" x="76.0" y="55.5" text-anchor="start"><tspan x="76.0" dy="0.0">普通 Web：确定输出</tspan></text>
+              <text class="node-subtitle" x="76.0" y="104.5" text-anchor="start"><tspan x="76.0" dy="0.0">接口契约 · 单元测试</tspan><tspan x="76.0" dy="21.0">pass/fail</tspan></text>
+            </g>
+            
+            <g transform="translate(120.0,500.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">A1</tspan></text>
+              <text class="node-title" x="76.0" y="55.5" text-anchor="start"><tspan x="76.0" dy="0.0">AI 系统：概率输出</tspan></text>
+              <text class="node-subtitle" x="76.0" y="104.5" text-anchor="start"><tspan x="76.0" dy="0.0">采样参数 · 多个可接受答案</tspan><tspan x="76.0" dy="21.0">质量评测</tspan></text>
+            </g>
+            
+            <g transform="translate(535.0,260.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">W2</tspan></text>
+              <text class="node-title" x="76.0" y="51.5" text-anchor="start"><tspan x="76.0" dy="0.0">普通 Web：CPU</tspan><tspan x="76.0" dy="29.0">worker</tspan></text>
+              <text class="node-subtitle" x="76.0" y="129.5" text-anchor="start"><tspan x="76.0" dy="0.0">线程池 · QPS · 水平扩容</tspan></text>
+            </g>
+            
+            <g transform="translate(535.0,500.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">A2</tspan></text>
+              <text class="node-title" x="76.0" y="55.5" text-anchor="start"><tspan x="76.0" dy="0.0">AI 系统：GPU batch</tspan></text>
+              <text class="node-subtitle" x="76.0" y="104.5" text-anchor="start"><tspan x="76.0" dy="0.0">显存 · KV cache</tspan><tspan x="76.0" dy="21.0">TTFT/TPOT</tspan></text>
+            </g>
+            
+            <g transform="translate(950.0,260.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">W3</tspan></text>
+              <text class="node-title" x="76.0" y="55.5" text-anchor="start"><tspan x="76.0" dy="0.0">普通 Web：代码配置</tspan></text>
+              <text class="node-subtitle" x="76.0" y="104.5" text-anchor="start"><tspan x="76.0" dy="0.0">git commit · 镜像</tspan><tspan x="76.0" dy="21.0">配置中心</tspan></text>
+            </g>
+            
+            <g transform="translate(950.0,500.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">A3</tspan></text>
+              <text class="node-title" x="76.0" y="55.5" text-anchor="start"><tspan x="76.0" dy="0.0">AI 系统：多制品依赖</tspan></text>
+              <text class="node-subtitle" x="76.0" y="104.5" text-anchor="start"><tspan x="76.0" dy="0.0">模型 · tokenizer · prompt</tspan><tspan x="76.0" dy="21.0">向量索引</tspan></text>
+            </g>
+            
+            <g transform="translate(1365.0,260.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">W4</tspan></text>
+              <text class="node-title" x="76.0" y="51.5" text-anchor="start"><tspan x="76.0" dy="0.0">普通</tspan><tspan x="76.0" dy="29.0">Web：错误码优先</tspan></text>
+              <text class="node-subtitle" x="76.0" y="129.5" text-anchor="start"><tspan x="76.0" dy="0.0">5xx · P99 · 饱和度</tspan></text>
+            </g>
+            
+            <g transform="translate(1365.0,500.0)">
+              <rect width="340.0" height="154.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="55.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="81.0" text-anchor="middle"><tspan x="40.0" dy="0.0">A4</tspan></text>
+              <text class="node-title" x="76.0" y="51.5" text-anchor="start"><tspan x="76.0" dy="0.0">AI</tspan><tspan x="76.0" dy="29.0">系统：质量也要观测</tspan></text>
+              <text class="node-subtitle" x="76.0" y="129.5" text-anchor="start"><tspan x="76.0" dy="0.0">召回率 · 忠实度 · 成本归因</tspan></text>
+            </g>
+            </g>
+  <g><rect x="247.3" y="410.0" width="85.4" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="290.0" y="425.0" text-anchor="middle"><tspan x="290.0" dy="0.0">新增评测闭环</tspan></text><rect x="639.4" y="410.0" width="131.2" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="705.0" y="425.0" text-anchor="middle"><tspan x="705.0" dy="0.0">新增 token/显存预算</tspan></text><rect x="1077.3" y="410.0" width="85.4" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1120.0" y="425.0" text-anchor="middle"><tspan x="1120.0" dy="0.0">新增制品治理</tspan></text><rect x="1492.3" y="410.0" width="85.4" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1535.0" y="425.0" text-anchor="middle"><tspan x="1535.0" dy="0.0">新增质量信号</tspan></text></g>
+</svg>
