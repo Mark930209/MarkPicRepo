@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1960" height="900" viewBox="0 0 1960 900" role="img" aria-label="GPU 推理弹性伸缩：触发扩容到真正可用，中间隔着冷启动">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="1852" height="812" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">GPU 推理弹性伸缩：触发扩容到真正可用，中间隔着冷启动</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">队列指标触发扩容后，还要等待节点启动、驱动和插件就绪、镜像拉取、模型加载、预热和 readiness 通过</tspan></text>
+    <line x1="92" y1="150.0" x2="1868" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g><path id="edge-path-0" class="edge-path edge-flow" d="M 380.0 401.0 C 400.0 401.0, 400.0 401.0, 420.0 401.0" marker-end="url(#arrow)" /><path id="edge-path-1" class="edge-path edge-flow" d="M 720.0 401.0 C 740.0 401.0, 740.0 401.0, 760.0 401.0" marker-end="url(#arrow)" /><path id="edge-path-2" class="edge-path edge-flow" d="M 1060.0 401.0 C 1080.0 401.0, 1080.0 401.0, 1100.0 401.0" marker-end="url(#arrow)" /><path id="edge-path-3" class="edge-path edge-flow" d="M 1400.0 401.0 C 1420.0 401.0, 1420.0 401.0, 1440.0 401.0" marker-end="url(#arrow)" /><path id="edge-path-4" class="edge-path edge-flow" d="M 1740.0 401.0 C 1336.8 401.0, 1183.2 681.0, 780.0 681.0" marker-end="url(#arrow)" /><path id="edge-path-5" class="edge-path edge-flow" d="M 1080.0 681.0 C 1113.6 681.0, 1126.4 681.0, 1160.0 681.0" marker-end="url(#arrow)" /><path id="edge-path-6" class="edge-path edge-flow" d="M 1740.0 401.0 C 1656.0 401.0, 1624.0 681.0, 1540.0 681.0" marker-end="url(#arrow)" /><path id="edge-path-7" class="edge-path edge-flow" d="M 1840.0 681.0 C 1554.4 681.0, 1445.6 681.0, 1160.0 681.0" marker-end="url(#arrow)" /></g>
+  <g><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#edge-path-0" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.35s" repeatCount="indefinite"><mpath href="#edge-path-1" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.70s" repeatCount="indefinite"><mpath href="#edge-path-2" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite"><mpath href="#edge-path-3" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.40s" repeatCount="indefinite"><mpath href="#edge-path-4" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.75s" repeatCount="indefinite"><mpath href="#edge-path-5" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.10s" repeatCount="indefinite"><mpath href="#edge-path-6" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.45s" repeatCount="indefinite"><mpath href="#edge-path-7" /></animateMotion></circle></g>
+  <g>
+            <g transform="translate(80.0,330.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">T0</tspan></text>
+              <text class="node-title" x="76.0" y="35.0" text-anchor="start"><tspan x="76.0" dy="0.0">队列/自定义指标</tspan><tspan x="76.0" dy="29.0">升高</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">等待 token、排队长度</tspan><tspan x="76.0" dy="21.0">GPU KV cache 压力</tspan></text>
+            </g>
+            
+            <g transform="translate(420.0,330.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">+</tspan></text>
+              <text class="node-title" x="76.0" y="35.0" text-anchor="start"><tspan x="76.0" dy="0.0">KEDA/HPA</tspan><tspan x="76.0" dy="29.0">触发扩容</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">创建新 Pod 或让 Pending</tspan><tspan x="76.0" dy="21.0">Pod 出现</tspan></text>
+            </g>
+            
+            <g transform="translate(760.0,330.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">min</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">GPU 节点扩容</tspan></text>
+              <text class="node-subtitle" x="76.0" y="98.5" text-anchor="start"><tspan x="76.0" dy="0.0">云实例启动</tspan><tspan x="76.0" dy="21.0">驱动和 device plugin 就绪</tspan></text>
+            </g>
+            
+            <g transform="translate(1100.0,330.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">img</tspan></text>
+              <text class="node-title" x="76.0" y="60.0" text-anchor="start"><tspan x="76.0" dy="0.0">镜像拉取</tspan></text>
+              <text class="node-subtitle" x="76.0" y="109.0" text-anchor="start"><tspan x="76.0" dy="0.0">大镜像和私有仓库会放大等待</tspan></text>
+            </g>
+            
+            <g transform="translate(1440.0,330.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">model</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">模型权重加载</tspan></text>
+              <text class="node-subtitle" x="76.0" y="98.5" text-anchor="start"><tspan x="76.0" dy="0.0">几十 GB 权重进入显存</tspan><tspan x="76.0" dy="21.0">30-180 秒常见</tspan></text>
+            </g>
+            
+            <g transform="translate(780.0,610.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">ready</tspan></text>
+              <text class="node-title" x="76.0" y="35.0" text-anchor="start"><tspan x="76.0" dy="0.0">预热和</tspan><tspan x="76.0" dy="29.0">readiness</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">首轮推理、缓存</tspan><tspan x="76.0" dy="21.0">探针通过后接流量</tspan></text>
+            </g>
+            
+            <g transform="translate(1160.0,610.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">OK</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">新增容量真正可用</tspan></text>
+              <text class="node-subtitle" x="76.0" y="98.5" text-anchor="start"><tspan x="76.0" dy="0.0">Service</tspan><tspan x="76.0" dy="21.0">端点更新，队列才开始下降</tspan></text>
+            </g>
+            
+            <g transform="translate(1540.0,610.0)">
+              <rect width="300.0" height="142.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="49.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="75.0" text-anchor="middle"><tspan x="40.0" dy="0.0">缓</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">缓解策略</tspan></text>
+              <text class="node-subtitle" x="76.0" y="98.5" text-anchor="start"><tspan x="76.0" dy="0.0">预热副本、提前扩容</tspan><tspan x="76.0" dy="21.0">权重缓存、降低镜像体积</tspan></text>
+            </g>
+            </g>
+  <g><rect x="381.1" y="354.0" width="37.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="400.0" y="369.0" text-anchor="middle"><tspan x="400.0" dy="0.0">触发</tspan></text><rect x="710.1" y="354.0" width="59.8" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="740.0" y="369.0" text-anchor="middle"><tspan x="740.0" dy="0.0">Pending</tspan></text><rect x="1049.2" y="354.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1080.0" y="369.0" text-anchor="middle"><tspan x="1080.0" dy="0.0">节点就绪</tspan></text><rect x="1389.2" y="354.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1420.0" y="369.0" text-anchor="middle"><tspan x="1420.0" dy="0.0">启动容器</tspan></text><rect x="1229.2" y="494.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1260.0" y="509.0" text-anchor="middle"><tspan x="1260.0" dy="0.0">加载完成</tspan></text><rect x="1068.4" y="634.0" width="103.2" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1120.0" y="649.0" text-anchor="middle"><tspan x="1120.0" dy="0.0">readiness 通过</tspan></text><rect x="1609.2" y="494.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1640.0" y="509.0" text-anchor="middle"><tspan x="1640.0" dy="0.0">主要瓶颈</tspan></text><rect x="1469.2" y="634.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1500.0" y="649.0" text-anchor="middle"><tspan x="1500.0" dy="0.0">缩短滞后</tspan></text></g>
+</svg>
