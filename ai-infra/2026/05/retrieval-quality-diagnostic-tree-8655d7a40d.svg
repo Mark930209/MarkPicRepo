@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1940" height="1020" viewBox="0 0 1940 1020" role="img" aria-label="召回质量诊断树：先定位症状，再改对应产物">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="1832" height="932" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">召回质量诊断树：先定位症状，再改对应产物</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">相似度低、不相关文档多、答案不忠实分别对应 embedding、过滤/chunk、生成证据使用等不同修复路径</tspan></text>
+    <line x1="92" y1="150.0" x2="1848" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g><path id="edge-path-0" class="edge-path edge-flow" d="M 1140.0 165.0 C 724.2 165.0, 565.8 385.0, 150.0 385.0" marker-end="url(#arrow)" /><path id="edge-path-1" class="edge-path edge-flow" d="M 1140.0 165.0 C 997.2 165.0, 942.8 385.0, 800.0 385.0" marker-end="url(#arrow)" /><path id="edge-path-2" class="edge-path edge-flow" d="M 1140.0 165.0 C 1270.2 165.0, 1319.8 385.0, 1450.0 385.0" marker-end="url(#arrow)" /><path id="edge-path-3" class="edge-path edge-flow" d="M 490.0 385.0 C 305.2 385.0, 234.8 630.0, 50.0 630.0" marker-end="url(#arrow)" /><path id="edge-path-4" class="edge-path edge-flow" d="M 490.0 385.0 C 456.4 385.0, 443.6 630.0, 410.0 630.0" marker-end="url(#arrow)" /><path id="edge-path-5" class="edge-path edge-flow" d="M 1140.0 385.0 C 934.2 385.0, 855.8 630.0, 650.0 630.0" marker-end="url(#arrow)" /><path id="edge-path-6" class="edge-path edge-flow" d="M 1140.0 385.0 C 1085.4 385.0, 1064.6 630.0, 1010.0 630.0" marker-end="url(#arrow)" /><path id="edge-path-7" class="edge-path edge-flow" d="M 1790.0 385.0 C 1580.0 385.0, 1500.0 630.0, 1290.0 630.0" marker-end="url(#arrow)" /><path id="edge-path-8" class="edge-path edge-flow" d="M 1790.0 385.0 C 1714.4 385.0, 1685.6 630.0, 1610.0 630.0" marker-end="url(#arrow)" /><path id="edge-path-9" class="edge-path edge-flow" d="M 390.0 630.0 C 322.8 630.0, 297.2 880.0, 230.0 880.0" marker-end="url(#arrow)" /><path id="edge-path-10" class="edge-path edge-flow" d="M 750.0 630.0 C 531.6 630.0, 448.4 880.0, 230.0 880.0" marker-end="url(#arrow)" /><path id="edge-path-11" class="edge-path edge-flow" d="M 990.0 630.0 C 922.8 630.0, 897.2 880.0, 830.0 880.0" marker-end="url(#arrow)" /><path id="edge-path-12" class="edge-path edge-flow" d="M 1350.0 630.0 C 1131.6 630.0, 1048.4 880.0, 830.0 880.0" marker-end="url(#arrow)" /><path id="edge-path-13" class="edge-path edge-flow" d="M 1630.0 630.0 C 1546.0 630.0, 1514.0 880.0, 1430.0 880.0" marker-end="url(#arrow)" /><path id="edge-path-14" class="edge-path edge-flow" d="M 1950.0 630.0 C 1731.6 630.0, 1648.4 880.0, 1430.0 880.0" marker-end="url(#arrow)" /></g>
+  <g><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#edge-path-0" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.35s" repeatCount="indefinite"><mpath href="#edge-path-1" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="0.70s" repeatCount="indefinite"><mpath href="#edge-path-2" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.05s" repeatCount="indefinite"><mpath href="#edge-path-3" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.40s" repeatCount="indefinite"><mpath href="#edge-path-4" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="1.75s" repeatCount="indefinite"><mpath href="#edge-path-5" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.10s" repeatCount="indefinite"><mpath href="#edge-path-6" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.45s" repeatCount="indefinite"><mpath href="#edge-path-7" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="2.80s" repeatCount="indefinite"><mpath href="#edge-path-8" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.15s" repeatCount="indefinite"><mpath href="#edge-path-9" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.50s" repeatCount="indefinite"><mpath href="#edge-path-10" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="3.85s" repeatCount="indefinite"><mpath href="#edge-path-11" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="4.20s" repeatCount="indefinite"><mpath href="#edge-path-12" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="4.55s" repeatCount="indefinite"><mpath href="#edge-path-13" /></animateMotion></circle><circle class="flow-token" r="7"><animateMotion dur="3.2s" begin="4.90s" repeatCount="indefinite"><mpath href="#edge-path-14" /></animateMotion></circle></g>
+  <g>
+            <g transform="translate(800.0,90.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">症</tspan></text>
+              <text class="node-title" x="76.0" y="53.5" text-anchor="start"><tspan x="76.0" dy="0.0">RAG 线上质量下降</tspan></text>
+              <text class="node-subtitle" x="76.0" y="102.5" text-anchor="start"><tspan x="76.0" dy="0.0">先看召回分布</tspan><tspan x="76.0" dy="21.0">证据内容和答案忠实性</tspan></text>
+            </g>
+            
+            <g transform="translate(150.0,310.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">低</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">相似度分整体偏低</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">top-k 分布下移或空召回变多</tspan></text>
+            </g>
+            
+            <g transform="translate(800.0,310.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">偏</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">召回文档不相关</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">分数不低，但证据和问题对不上</tspan></text>
+            </g>
+            
+            <g transform="translate(1450.0,310.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">幻</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">答案不忠实</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">证据里有事实，回答却编造或漏掉</tspan></text>
+            </g>
+            
+            <g transform="translate(50.0,555.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">1</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">查 embedding 版本</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">query 模型和索引模型是否一致</tspan></text>
+            </g>
+            
+            <g transform="translate(410.0,555.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">2</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">查 query 形态</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">缩写、错别字、领域术语是否偏移</tspan></text>
+            </g>
+            
+            <g transform="translate(650.0,555.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">3</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">查 metadata filter</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">租户、权限、时间范围是否误过滤</tspan></text>
+            </g>
+            
+            <g transform="translate(1010.0,555.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">4</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">查 chunk 边界</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">答案是否被切散或混入噪声</tspan></text>
+            </g>
+            
+            <g transform="translate(1290.0,555.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">5</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">查 context 拼接</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">证据顺序、长度截断、引用格式</tspan></text>
+            </g>
+            
+            <g transform="translate(1610.0,555.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">6</tspan></text>
+              <text class="node-title" x="76.0" y="64.0" text-anchor="start"><tspan x="76.0" dy="0.0">查生成约束</tspan></text>
+              <text class="node-subtitle" x="76.0" y="113.0" text-anchor="start"><tspan x="76.0" dy="0.0">是否要求基于证据回答和拒答</tspan></text>
+            </g>
+            
+            <g transform="translate(230.0,805.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">修</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">重建索引 / query</tspan><tspan x="76.0" dy="29.0">改写</tspan></text>
+              <text class="node-subtitle" x="76.0" y="127.5" text-anchor="start"><tspan x="76.0" dy="0.0">版本不一致先回滚或全量重建</tspan></text>
+            </g>
+            
+            <g transform="translate(830.0,805.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">修</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">调过滤、chunk</tspan><tspan x="76.0" dy="29.0">rerank</tspan></text>
+              <text class="node-subtitle" x="76.0" y="127.5" text-anchor="start"><tspan x="76.0" dy="0.0">先固定评测集，再小步比较策略</tspan></text>
+            </g>
+            
+            <g transform="translate(1430.0,805.0)">
+              <rect width="340.0" height="150.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="53.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="79.0" text-anchor="middle"><tspan x="40.0" dy="0.0">修</tspan></text>
+              <text class="node-title" x="76.0" y="49.5" text-anchor="start"><tspan x="76.0" dy="0.0">压缩 context / 改</tspan><tspan x="76.0" dy="29.0">prompt</tspan></text>
+              <text class="node-subtitle" x="76.0" y="127.5" text-anchor="start"><tspan x="76.0" dy="0.0">减少噪声，强化引用和不知道边界</tspan></text>
+            </g>
+            </g>
+  <g><rect x="614.2" y="228.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="645.0" y="243.0" text-anchor="middle"><tspan x="645.0" dy="0.0">分数异常</tspan></text><rect x="939.2" y="228.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="970.0" y="243.0" text-anchor="middle"><tspan x="970.0" dy="0.0">内容异常</tspan></text><rect x="1264.2" y="228.0" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1295.0" y="243.0" text-anchor="middle"><tspan x="1295.0" dy="0.0">生成异常</tspan></text><rect x="239.2" y="460.5" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="270.0" y="475.5" text-anchor="middle"><tspan x="270.0" dy="0.0">先查版本</tspan></text><rect x="419.2" y="460.5" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="450.0" y="475.5" text-anchor="middle"><tspan x="450.0" dy="0.0">再查输入</tspan></text><rect x="870.1" y="460.5" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="895.0" y="475.5" text-anchor="middle"><tspan x="895.0" dy="0.0">候选集</tspan></text><rect x="1044.2" y="460.5" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1075.0" y="475.5" text-anchor="middle"><tspan x="1075.0" dy="0.0">证据单元</tspan></text><rect x="1509.2" y="460.5" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1540.0" y="475.5" text-anchor="middle"><tspan x="1540.0" dy="0.0">证据拼接</tspan></text><rect x="1669.2" y="460.5" width="61.6" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1700.0" y="475.5" text-anchor="middle"><tspan x="1700.0" dy="0.0">生成约束</tspan></text><rect x="285.1" y="708.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="310.0" y="723.0" text-anchor="middle"><tspan x="310.0" dy="0.0">修索引</tspan></text><rect x="457.4" y="708.0" width="65.2" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="490.0" y="723.0" text-anchor="middle"><tspan x="490.0" dy="0.0">修 query</tspan></text><rect x="885.1" y="708.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="910.0" y="723.0" text-anchor="middle"><tspan x="910.0" dy="0.0">修过滤</tspan></text><rect x="1065.2" y="708.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1090.0" y="723.0" text-anchor="middle"><tspan x="1090.0" dy="0.0">修切分</tspan></text><rect x="1505.2" y="708.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1530.0" y="723.0" text-anchor="middle"><tspan x="1530.0" dy="0.0">修拼接</tspan></text><rect x="1665.2" y="708.0" width="49.7" height="28.0" rx="4" fill="#f7f9fb" opacity="0.92" /><text class="edge-label" x="1690.0" y="723.0" text-anchor="middle"><tspan x="1690.0" dy="0.0">修约束</tspan></text></g>
+</svg>
