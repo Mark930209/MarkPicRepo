@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="920" viewBox="0 0 1540 920" role="img" aria-label="AI 产物 vs 普通软件产物：四类产物的工程差异">
+  
+    <defs>
+      <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#071018" flood-opacity="0.14" />
+      </filter>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="blur" />
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#1f9d8a" />
+      </marker>
+            <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M2,2 L10,6 L2,10 Z" fill="#647485" opacity="0.35" />
+      </marker>
+            <marker id="dot-marker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#1f9d8a" />
+      </marker>
+            <marker id="dot-muted" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="3" fill="#647485" opacity="0.35" />
+      </marker>
+      <linearGradient id="neural-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1f9d8a" stop-opacity="0.15" />
+        <stop offset="50%" stop-color="#5d74d8" stop-opacity="0.75" />
+        <stop offset="100%" stop-color="#d88c3a" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    
+  
+    <style>
+      .title { font: 700 36px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .subtitle { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .node-title { font: 700 25px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .node-subtitle { font: 500 16px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .edge-label { font: 650 14px Inter, Segoe UI, Arial, sans-serif; fill: #647485; }
+      .panel-label { font: 700 14px Inter, Segoe UI, Arial, sans-serif; fill: #17212b; }
+      .formula { font: 650 18px Consolas, Cascadia Mono, monospace; fill: #17212b; }
+      .edge-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .edge-dot-path { fill: none; stroke: #1f9d8a; stroke-width: 2.5; marker-end: url(#dot-marker); }
+      .edge-flow { stroke-dasharray: 10 12; animation: dash 1.6s linear infinite; }
+      .flow-token { fill: #d88c3a; filter: url(#soft-shadow); opacity: 0.9; }
+      .neuron { fill: #ffffff; stroke: #1f9d8a; stroke-width: 2; }
+      .neuron.hot { animation: neuronPulse 2.4s ease-in-out infinite; }
+      .neural-link { stroke: url(#neural-edge); stroke-width: 1.3; opacity: 0.42; animation: linkPulse 3.8s ease-in-out infinite; }
+      .heat-cell { animation: heatShift 3.4s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -44; } }
+      @keyframes neuronPulse { 0%,100% { filter: none; } 45% { filter: drop-shadow(0 0 14px #1f9d8a); } }
+      @keyframes linkPulse { 0%,100% { opacity: 0.18; } 45% { opacity: 0.8; } }
+      @keyframes heatShift { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    </style>
+    
+  <rect width="100%" height="100%" fill="#f7f9fb" />
+  <rect x="54" y="44" width="1432" height="832" rx="28" fill="#ffffff" opacity="0.72" stroke="#d6e0e6" />
+    <text class="title" x="90.0" y="100.0" text-anchor="start"><tspan x="90.0" dy="0.0">AI 产物 vs 普通软件产物：四类产物的工程差异</tspan></text>
+    <text class="subtitle" x="92.0" y="126.0" text-anchor="start"><tspan x="92.0" dy="0.0">代码、模型、数据集、Prompt 在版本管理、测试验证、回滚方式上的本质差异</tspan></text>
+    <line x1="92" y1="150.0" x2="1448" y2="150.0" stroke="#d6e0e6" stroke-width="1" stroke-dasharray="4 12" opacity="0.7" />
+  <g></g>
+  <g></g>
+  <g>
+            <g transform="translate(110.0,310.0)">
+              <rect width="600.0" height="200.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="78.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="104.0" text-anchor="middle"><tspan x="40.0" dy="0.0">ui</tspan></text>
+              <text class="node-title" x="76.0" y="89.0" text-anchor="start"><tspan x="76.0" dy="0.0">代码</tspan></text>
+              <text class="node-subtitle" x="76.0" y="138.0" text-anchor="start"><tspan x="76.0" dy="0.0">版本：commit hash · 测试：pass/fail · 回滚：分钟级</tspan></text>
+            </g>
+            
+            <g transform="translate(830.0,310.0)">
+              <rect width="600.0" height="200.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="78.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="104.0" text-anchor="middle"><tspan x="40.0" dy="0.0">gpu</tspan></text>
+              <text class="node-title" x="76.0" y="78.5" text-anchor="start"><tspan x="76.0" dy="0.0">模型</tspan></text>
+              <text class="node-subtitle" x="76.0" y="127.5" text-anchor="start"><tspan x="76.0" dy="0.0">版本：checkpoint 文件 · 测试：指标对比</tspan><tspan x="76.0" dy="21.0">回滚：受环境依赖约束</tspan></text>
+            </g>
+            
+            <g transform="translate(110.0,560.0)">
+              <rect width="600.0" height="200.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="78.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="104.0" text-anchor="middle"><tspan x="40.0" dy="0.0">db</tspan></text>
+              <text class="node-title" x="76.0" y="78.5" text-anchor="start"><tspan x="76.0" dy="0.0">数据集</tspan></text>
+              <text class="node-subtitle" x="76.0" y="127.5" text-anchor="start"><tspan x="76.0" dy="0.0">版本：无标准包管理器 · 测试：无确定性验证</tspan><tspan x="76.0" dy="21.0">回滚：快照，代价高</tspan></text>
+            </g>
+            
+            <g transform="translate(830.0,560.0)">
+              <rect width="600.0" height="200.0" rx="16" fill="#ffffff" stroke="#d6e0e6" filter="url(#soft-shadow)" />
+              <rect x="18" y="78.0" width="44" height="44" rx="12" fill="#eef4f7" stroke="#d6e0e6" />
+              <text class="subtitle" x="40.0" y="104.0" text-anchor="middle"><tspan x="40.0" dy="0.0">msg</tspan></text>
+              <text class="node-title" x="76.0" y="78.5" text-anchor="start"><tspan x="76.0" dy="0.0">Prompt</tspan></text>
+              <text class="node-subtitle" x="76.0" y="127.5" text-anchor="start"><tspan x="76.0" dy="0.0">版本：多数团队无版本控制 · 测试：输出高度不稳定</tspan><tspan x="76.0" dy="21.0">回滚：人工操作</tspan></text>
+            </g>
+            </g>
+  <g></g>
+</svg>
