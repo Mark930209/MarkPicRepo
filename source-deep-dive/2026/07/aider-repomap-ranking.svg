@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="RepoMap 用图排名压缩全仓上下文">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9aa7b2"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfaf7"/><stop offset="1" stop-color="#eef4f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="672" rx="24" fill="rgba(255,255,255,0.62)" stroke="#d7dee5"/>
+  <text x="48" y="76" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="34" font-weight="800" fill="#1f2933">RepoMap 用图排名压缩全仓上下文</text>
+  <text x="48" y="110" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" fill="#52616b">定义和引用变成文件图；聊天文件、提到的标识符和命名形态改变边权与个性化。</text>
+  <g font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+  <g>
+      <rect x="70" y="145" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="179" r="18" fill="#2f6fbb" opacity="0.18" stroke="#2f6fbb"/>
+      <text x="104" y="186" text-anchor="middle" font-size="17" font-weight="800" fill="#2f6fbb">01</text>
+      <text x="142" y="174" font-size="21" font-weight="750" fill="#1f2933">tags</text>
+      <text x="430" y="174" font-size="18" fill="#52616b">get_tags_raw()</text>
+      <text x="430" y="199" font-size="16" fill="#6c7780">def / ref / line / name</text>
+    </g>
+<g>
+      <rect x="70" y="224" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="258" r="18" fill="#16857a" opacity="0.18" stroke="#16857a"/>
+      <text x="104" y="265" text-anchor="middle" font-size="17" font-weight="800" fill="#16857a">02</text>
+      <text x="142" y="253" font-size="21" font-weight="750" fill="#1f2933">graph</text>
+      <text x="430" y="253" font-size="18" fill="#52616b">MultiDiGraph</text>
+      <text x="430" y="278" font-size="16" fill="#6c7780">referencer -&gt; definer</text>
+    </g>
+<g>
+      <rect x="70" y="303" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="337" r="18" fill="#b97819" opacity="0.18" stroke="#b97819"/>
+      <text x="104" y="344" text-anchor="middle" font-size="17" font-weight="800" fill="#b97819">03</text>
+      <text x="142" y="332" font-size="21" font-weight="750" fill="#1f2933">weights</text>
+      <text x="430" y="332" font-size="18" fill="#52616b">mentioned idents ×10, chat files ×50</text>
+      <text x="430" y="357" font-size="16" fill="#6c7780">削弱私有名和高频泛名</text>
+    </g>
+<g>
+      <rect x="70" y="382" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="416" r="18" fill="#7556a5" opacity="0.18" stroke="#7556a5"/>
+      <text x="104" y="423" text-anchor="middle" font-size="17" font-weight="800" fill="#7556a5">04</text>
+      <text x="142" y="411" font-size="21" font-weight="750" fill="#1f2933">pagerank</text>
+      <text x="430" y="411" font-size="18" fill="#52616b">nx.pagerank(weight)</text>
+      <text x="430" y="436" font-size="16" fill="#6c7780">ranked_definitions</text>
+    </g>
+<g>
+      <rect x="70" y="461" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="495" r="18" fill="#3f8b4f" opacity="0.18" stroke="#3f8b4f"/>
+      <text x="104" y="502" text-anchor="middle" font-size="17" font-weight="800" fill="#3f8b4f">05</text>
+      <text x="142" y="490" font-size="21" font-weight="750" fill="#1f2933">budget</text>
+      <text x="430" y="490" font-size="18" fill="#52616b">binary search by token_count</text>
+      <text x="430" y="515" font-size="16" fill="#6c7780">fit map_tokens</text>
+    </g>
+<g>
+      <rect x="70" y="540" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="574" r="18" fill="#bd4b4b" opacity="0.18" stroke="#bd4b4b"/>
+      <text x="104" y="581" text-anchor="middle" font-size="17" font-weight="800" fill="#bd4b4b">06</text>
+      <text x="142" y="569" font-size="21" font-weight="750" fill="#1f2933">tree</text>
+      <text x="430" y="569" font-size="18" fill="#52616b">TreeContext lines_of_interest</text>
+      <text x="430" y="594" font-size="16" fill="#6c7780">只渲染关键定义</text>
+    </g>
+  </g>
+  <rect x="48" y="626" width="1104" height="44" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
+  <text x="68" y="654" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="700" fill="#6b4a10">可迁移判断：大仓库上下文不是摘要问题，而是检索排序和预算裁剪问题。</text>
+</svg>

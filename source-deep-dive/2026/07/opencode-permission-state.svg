@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="权限不是弹窗，而是会话内的等待状态">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9aa7b2"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfaf7"/><stop offset="1" stop-color="#eef4f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="672" rx="24" fill="rgba(255,255,255,0.62)" stroke="#d7dee5"/>
+  <text x="48" y="76" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="34" font-weight="800" fill="#1f2933">权限不是弹窗，而是会话内的等待状态</text>
+  <text x="48" y="110" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" fill="#52616b">Permission.ask 把规则评估、pending map、bus event 和 Deferred 等待连在一起。</text>
+  <g font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+  <g>
+      <rect x="70" y="150" width="500" height="380" rx="18" fill="#ffffff" stroke="#3f8b4f" stroke-width="3"/>
+      <rect x="70" y="150" width="500" height="68" rx="18" fill="#3f8b4f" opacity="0.14"/>
+      <text x="98" y="193" font-size="27" font-weight="800" fill="#1f2933">OpenCode</text>
+      <g><circle cx="106" cy="262" r="7" fill="#3f8b4f"/><text x="128" y="269" font-size="21" fill="#1f2933">规则先判 deny/allow</text></g>
+<g><circle cx="106" cy="320" r="7" fill="#3f8b4f"/><text x="128" y="327" font-size="21" fill="#1f2933">ask 生成 PermissionID</text></g>
+<g><circle cx="106" cy="378" r="7" fill="#3f8b4f"/><text x="128" y="385" font-size="21" fill="#1f2933">pending 存 Deferred</text></g>
+<g><circle cx="106" cy="436" r="7" fill="#3f8b4f"/><text x="128" y="443" font-size="21" fill="#1f2933">reply 后恢复工具执行</text></g>
+    </g>
+<g>
+      <rect x="630" y="150" width="500" height="380" rx="18" fill="#ffffff" stroke="#bd4b4b" stroke-width="3"/>
+      <rect x="630" y="150" width="500" height="68" rx="18" fill="#bd4b4b" opacity="0.14"/>
+      <text x="658" y="193" font-size="27" font-weight="800" fill="#1f2933">薄弱实现</text>
+      <g><circle cx="666" cy="262" r="7" fill="#bd4b4b"/><text x="688" y="269" font-size="21" fill="#1f2933">UI 弹窗和执行流分离</text></g>
+<g><circle cx="666" cy="320" r="7" fill="#bd4b4b"/><text x="688" y="327" font-size="21" fill="#1f2933">没有 pending 可查询状态</text></g>
+<g><circle cx="666" cy="378" r="7" fill="#bd4b4b"/><text x="688" y="385" font-size="21" fill="#1f2933">reject 后未清同会话等待项</text></g>
+<g><circle cx="666" cy="436" r="7" fill="#bd4b4b"/><text x="688" y="443" font-size="21" fill="#1f2933">always 不能沉淀规则</text></g>
+    </g>
+  </g>
+  <rect x="48" y="626" width="1104" height="44" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
+  <text x="68" y="654" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="700" fill="#6b4a10">可迁移判断：权限系统要进入运行时状态机，不能只在 UI 层问一句“是否允许”。</text>
+</svg>

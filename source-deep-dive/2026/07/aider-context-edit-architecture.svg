@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Aider 把上下文选择和补丁应用拆成两套机制">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9aa7b2"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfaf7"/><stop offset="1" stop-color="#eef4f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="672" rx="24" fill="rgba(255,255,255,0.62)" stroke="#d7dee5"/>
+  <text x="48" y="76" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="34" font-weight="800" fill="#1f2933">Aider 把上下文选择和补丁应用拆成两套机制</text>
+  <text x="48" y="110" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" fill="#52616b">RepoMap 决定给模型看什么；Coder / editblock 决定模型输出怎样落到文件。</text>
+  <g font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+  <g id="repo">
+    <rect x="40" y="105" width="230" height="150" rx="16" fill="#ffffff" stroke="#2f6fbb" stroke-width="3"/>
+    <rect x="40" y="105" width="230" height="42" rx="16" fill="#2f6fbb" opacity="0.12"/>
+    <text x="60" y="134" font-size="22" font-weight="700" fill="#1f2933">Git repo</text>
+    <text x="60" y="177" font-size="17" fill="#52616b">tracked files</text>
+<text x="60" y="203" font-size="17" fill="#52616b">chat files</text>
+<text x="60" y="229" font-size="17" fill="#52616b">other files</text>
+  </g>
+<g id="map">
+    <rect x="340" y="80" width="245" height="185" rx="16" fill="#ffffff" stroke="#16857a" stroke-width="3"/>
+    <rect x="340" y="80" width="245" height="42" rx="16" fill="#16857a" opacity="0.12"/>
+    <text x="360" y="109" font-size="22" font-weight="700" fill="#1f2933">RepoMap</text>
+    <text x="360" y="152" font-size="17" fill="#52616b">tree-sitter tags</text>
+<text x="360" y="178" font-size="17" fill="#52616b">NetworkX PageRank</text>
+<text x="360" y="204" font-size="17" fill="#52616b">token budget</text>
+  </g>
+<g id="coder">
+    <rect x="655" y="95" width="245" height="170" rx="16" fill="#ffffff" stroke="#b97819" stroke-width="3"/>
+    <rect x="655" y="95" width="245" height="42" rx="16" fill="#b97819" opacity="0.12"/>
+    <text x="675" y="124" font-size="22" font-weight="700" fill="#1f2933">Coder.send_message</text>
+    <text x="675" y="167" font-size="17" fill="#52616b">format_messages()</text>
+<text x="675" y="193" font-size="17" fill="#52616b">LLM stream</text>
+<text x="675" y="219" font-size="17" fill="#52616b">apply_updates()</text>
+  </g>
+<g id="edit">
+    <rect x="965" y="80" width="205" height="185" rx="16" fill="#ffffff" stroke="#3f8b4f" stroke-width="3"/>
+    <rect x="965" y="80" width="205" height="42" rx="16" fill="#3f8b4f" opacity="0.12"/>
+    <text x="985" y="109" font-size="22" font-weight="700" fill="#1f2933">EditBlockCoder</text>
+    <text x="985" y="152" font-size="17" fill="#52616b">SEARCH / REPLACE</text>
+<text x="985" y="178" font-size="17" fill="#52616b">dry run</text>
+<text x="985" y="204" font-size="17" fill="#52616b">reflect errors</text>
+  </g>
+<g id="git">
+    <rect x="655" y="405" width="245" height="120" rx="16" fill="#ffffff" stroke="#7556a5" stroke-width="3"/>
+    <rect x="655" y="405" width="245" height="42" rx="16" fill="#7556a5" opacity="0.12"/>
+    <text x="675" y="434" font-size="22" font-weight="700" fill="#1f2933">Git feedback</text>
+    <text x="675" y="477" font-size="17" fill="#52616b">auto_commit</text>
+<text x="675" y="503" font-size="17" fill="#52616b">lint/test reflection</text>
+  </g>
+<path d="M 270 180 C 305 180, 305 172.5, 340 172.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="305" y="168.25" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">symbols</text>
+<path d="M 585 172.5 C 620 172.5, 620 180, 655 180" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="620" y="168.25" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">repo messages</text>
+<path d="M 900 180 C 932.5 180, 932.5 172.5, 965 172.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="932.5" y="168.25" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">model edits</text>
+<path d="M 965 172.5 C 617.5 172.5, 617.5 180, 270 180" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="617.5" y="168.25" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">apply</text>
+<path d="M 900 265 C 777.5 265, 777.5 405, 655 405" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="777.5" y="327" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">commit/lint/test</text>
+  </g>
+  <rect x="48" y="626" width="1104" height="44" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
+  <text x="68" y="654" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="700" fill="#6b4a10">可迁移判断：编码 Agent 的可靠性来自“选上下文”和“验补丁”两个独立约束，不是更长 prompt。</text>
+</svg>

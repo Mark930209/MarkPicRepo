@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Hermes 的自成长由四类存储协作">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9aa7b2"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfaf7"/><stop offset="1" stop-color="#eef4f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="672" rx="24" fill="rgba(255,255,255,0.62)" stroke="#d7dee5"/>
+  <text x="48" y="76" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="34" font-weight="800" fill="#1f2933">Hermes 的自成长由四类存储协作</text>
+  <text x="48" y="110" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" fill="#52616b">memory 记事实，skill 记做法，session_search 找旧上下文，background review 在回合后沉淀。</text>
+  <g font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+  <g id="turn">
+    <rect x="40" y="150" width="210" height="130" rx="16" fill="#ffffff" stroke="#2f6fbb" stroke-width="3"/>
+    <rect x="40" y="150" width="210" height="42" rx="16" fill="#2f6fbb" opacity="0.12"/>
+    <text x="60" y="179" font-size="22" font-weight="700" fill="#1f2933">前台回合</text>
+    <text x="60" y="222" font-size="17" fill="#52616b">conversation_loop</text>
+<text x="60" y="248" font-size="17" fill="#52616b">tool dispatch</text>
+<text x="60" y="274" font-size="17" fill="#52616b">session db</text>
+  </g>
+<g id="memory">
+    <rect x="330" y="70" width="220" height="125" rx="16" fill="#ffffff" stroke="#3f8b4f" stroke-width="3"/>
+    <rect x="330" y="70" width="220" height="42" rx="16" fill="#3f8b4f" opacity="0.12"/>
+    <text x="350" y="99" font-size="22" font-weight="700" fill="#1f2933">MemoryStore</text>
+    <text x="350" y="142" font-size="17" fill="#52616b">MEMORY.md / USER.md</text>
+<text x="350" y="168" font-size="17" fill="#52616b">frozen snapshot</text>
+  </g>
+<g id="skill">
+    <rect x="330" y="240" width="220" height="125" rx="16" fill="#ffffff" stroke="#16857a" stroke-width="3"/>
+    <rect x="330" y="240" width="220" height="42" rx="16" fill="#16857a" opacity="0.12"/>
+    <text x="350" y="269" font-size="22" font-weight="700" fill="#1f2933">Skill Manager</text>
+    <text x="350" y="312" font-size="17" fill="#52616b">SKILL.md</text>
+<text x="350" y="338" font-size="17" fill="#52616b">references/templates/scripts</text>
+  </g>
+<g id="search">
+    <rect x="640" y="70" width="230" height="125" rx="16" fill="#ffffff" stroke="#7556a5" stroke-width="3"/>
+    <rect x="640" y="70" width="230" height="42" rx="16" fill="#7556a5" opacity="0.12"/>
+    <text x="660" y="99" font-size="22" font-weight="700" fill="#1f2933">session_search</text>
+    <text x="660" y="142" font-size="17" fill="#52616b">SQLite + FTS5</text>
+<text x="660" y="168" font-size="17" fill="#52616b">discover / scroll / browse</text>
+  </g>
+<g id="review">
+    <rect x="640" y="240" width="230" height="125" rx="16" fill="#ffffff" stroke="#b97819" stroke-width="3"/>
+    <rect x="640" y="240" width="230" height="42" rx="16" fill="#b97819" opacity="0.12"/>
+    <text x="660" y="269" font-size="22" font-weight="700" fill="#1f2933">Background Review</text>
+    <text x="660" y="312" font-size="17" fill="#52616b">forked AIAgent</text>
+<text x="660" y="338" font-size="17" fill="#52616b">memory/skill whitelist</text>
+  </g>
+<g id="guard">
+    <rect x="935" y="155" width="220" height="145" rx="16" fill="#ffffff" stroke="#bd4b4b" stroke-width="3"/>
+    <rect x="935" y="155" width="220" height="42" rx="16" fill="#bd4b4b" opacity="0.12"/>
+    <text x="955" y="184" font-size="22" font-weight="700" fill="#1f2933">隔离边界</text>
+    <text x="955" y="227" font-size="17" fill="#52616b">persist_disabled</text>
+<text x="955" y="253" font-size="17" fill="#52616b">read-before-write</text>
+<text x="955" y="279" font-size="17" fill="#52616b">protected skill guard</text>
+  </g>
+<path d="M 250 215 C 290 215, 290 132.5, 330 132.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="290" y="165.75" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">事实</text>
+<path d="M 250 215 C 445 215, 445 132.5, 640 132.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="445" y="165.75" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">回忆</text>
+<path d="M 250 215 C 445 215, 445 302.5, 640 302.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="445" y="250.75" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">回合后</text>
+<path d="M 640 302.5 C 595 302.5, 595 132.5, 550 132.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="595" y="209.5" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">保存</text>
+<path d="M 640 302.5 C 595 302.5, 595 302.5, 550 302.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="595" y="294.5" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">沉淀</text>
+<path d="M 870 302.5 C 902.5 302.5, 902.5 227.5, 935 227.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="902.5" y="257" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">限制</text>
+  </g>
+  <rect x="48" y="626" width="1104" height="44" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
+  <text x="68" y="654" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="700" fill="#6b4a10">可迁移判断：自成长 Agent 不能把所有经验塞进一个“长期记忆”文件；不同知识有不同生命周期。</text>
+</svg>

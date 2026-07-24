@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="一次消息进入 runLoop 后发生什么">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9aa7b2"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfaf7"/><stop offset="1" stop-color="#eef4f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="672" rx="24" fill="rgba(255,255,255,0.62)" stroke="#d7dee5"/>
+  <text x="48" y="76" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="34" font-weight="800" fill="#1f2933">一次消息进入 runLoop 后发生什么</text>
+  <text x="48" y="110" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" fill="#52616b">runLoop 不是单次请求封装，而是把工具调用、compaction、subtask 和 max steps 放进同一个循环。</text>
+  <g font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+  <g>
+      <rect x="70" y="145" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="179" r="18" fill="#2f6fbb" opacity="0.18" stroke="#2f6fbb"/>
+      <text x="104" y="186" text-anchor="middle" font-size="17" font-weight="800" fill="#2f6fbb">01</text>
+      <text x="142" y="174" font-size="21" font-weight="750" fill="#1f2933">append user</text>
+      <text x="430" y="174" font-size="18" fill="#52616b">SessionPrompt.prompt()</text>
+      <text x="430" y="199" font-size="16" fill="#6c7780">保存 user parts</text>
+    </g>
+<g>
+      <rect x="70" y="224" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="258" r="18" fill="#16857a" opacity="0.18" stroke="#16857a"/>
+      <text x="104" y="265" text-anchor="middle" font-size="17" font-weight="800" fill="#16857a">02</text>
+      <text x="142" y="253" font-size="21" font-weight="750" fill="#1f2933">guard</text>
+      <text x="430" y="253" font-size="18" fill="#52616b">SessionRunState.ensureRunning()</text>
+      <text x="430" y="278" font-size="16" fill="#6c7780">阻止并发写同一 session</text>
+    </g>
+<g>
+      <rect x="70" y="303" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="337" r="18" fill="#b97819" opacity="0.18" stroke="#b97819"/>
+      <text x="104" y="344" text-anchor="middle" font-size="17" font-weight="800" fill="#b97819">03</text>
+      <text x="142" y="332" font-size="21" font-weight="750" fill="#1f2933">load history</text>
+      <text x="430" y="332" font-size="18" fill="#52616b">MessageV2.filterCompactedEffect()</text>
+      <text x="430" y="357" font-size="16" fill="#6c7780">找 lastUser / lastAssistant</text>
+    </g>
+<g>
+      <rect x="70" y="382" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="416" r="18" fill="#7556a5" opacity="0.18" stroke="#7556a5"/>
+      <text x="104" y="423" text-anchor="middle" font-size="17" font-weight="800" fill="#7556a5">04</text>
+      <text x="142" y="411" font-size="21" font-weight="750" fill="#1f2933">choose action</text>
+      <text x="430" y="411" font-size="18" fill="#52616b">subtask / compaction / model</text>
+      <text x="430" y="436" font-size="16" fill="#6c7780">循环内部决策</text>
+    </g>
+<g>
+      <rect x="70" y="461" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="495" r="18" fill="#3f8b4f" opacity="0.18" stroke="#3f8b4f"/>
+      <text x="104" y="502" text-anchor="middle" font-size="17" font-weight="800" fill="#3f8b4f">05</text>
+      <text x="142" y="490" font-size="21" font-weight="750" fill="#1f2933">assistant msg</text>
+      <text x="430" y="490" font-size="18" fill="#52616b">sessions.updateMessage()</text>
+      <text x="430" y="515" font-size="16" fill="#6c7780">可恢复的消息骨架</text>
+    </g>
+<g>
+      <rect x="70" y="540" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="574" r="18" fill="#bd4b4b" opacity="0.18" stroke="#bd4b4b"/>
+      <text x="104" y="581" text-anchor="middle" font-size="17" font-weight="800" fill="#bd4b4b">06</text>
+      <text x="142" y="569" font-size="21" font-weight="750" fill="#1f2933">stream process</text>
+      <text x="430" y="569" font-size="18" fill="#52616b">SessionProcessor.handle.process()</text>
+      <text x="430" y="594" font-size="16" fill="#6c7780">text/tool/error parts</text>
+    </g>
+<g>
+      <rect x="70" y="619" width="1060" height="67" rx="14" fill="#ffffff" stroke="#d7dee5"/>
+      <circle cx="104" cy="653" r="18" fill="#2f6fbb" opacity="0.18" stroke="#2f6fbb"/>
+      <text x="104" y="660" text-anchor="middle" font-size="17" font-weight="800" fill="#2f6fbb">07</text>
+      <text x="142" y="648" font-size="21" font-weight="750" fill="#1f2933">loop exit</text>
+      <text x="430" y="648" font-size="18" fill="#52616b">finish != tool-calls</text>
+      <text x="430" y="673" font-size="16" fill="#6c7780">返回最后 assistant</text>
+    </g>
+  </g>
+  <rect x="48" y="626" width="1104" height="44" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
+  <text x="68" y="654" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="700" fill="#6b4a10">可迁移判断：Agent 循环要能继续、停止、压缩和反思，不能只包装一次 LLM call。</text>
+</svg>
