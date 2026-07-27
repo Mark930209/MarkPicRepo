@@ -1,69 +1,109 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Pi 的最小内核和扩展边界">
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#9aa7b2"/></marker>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfaf7"/><stop offset="1" stop-color="#eef4f7"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaf7"/>
+      <stop offset="1" stop-color="#eef4f7"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64727f"/>
+    </marker>
+    <style>
+      .sans { font-family: 'Noto Sans SC','Microsoft YaHei',Arial,sans-serif; }
+      .title { font-size: 34px; font-weight: 800; fill: #1f2933; }
+      .subtitle { font-size: 18px; fill: #52616b; }
+      .zone-title { font-size: 19px; font-weight: 800; fill: #1f2933; }
+      .card-title { font-size: 18px; font-weight: 800; fill: #1f2933; }
+      .body { font-size: 16px; fill: #52616b; }
+      .small { font-size: 15px; fill: #52616b; }
+      .label { font-size: 15px; font-weight: 700; fill: #43515c; }
+      .zone { fill: #ffffff; stroke: #d7dee5; stroke-width: 1.5; }
+      .card { fill: #ffffff; stroke-width: 2.5; }
+      .arrow { fill: none; stroke: #64727f; stroke-width: 2.4; marker-end: url(#arrow); }
+      .soft-arrow { fill: none; stroke: #9aa7b2; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
   </defs>
+
   <rect width="1200" height="720" fill="url(#bg)"/>
-  <rect x="24" y="24" width="1152" height="672" rx="24" fill="rgba(255,255,255,0.62)" stroke="#d7dee5"/>
-  <text x="48" y="76" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="34" font-weight="800" fill="#1f2933">Pi 的最小内核和扩展边界</text>
-  <text x="48" y="110" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" fill="#52616b">CLI 只把参数翻译给 SDK；AgentSession 拥有工具注册表、扩展运行器和 prompt 重建权。</text>
-  <g font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
-  <g id="cli">
-    <rect x="40" y="145" width="205" height="110" rx="16" fill="#ffffff" stroke="#2f6fbb" stroke-width="3"/>
-    <rect x="40" y="145" width="205" height="42" rx="16" fill="#2f6fbb" opacity="0.12"/>
-    <text x="60" y="174" font-size="22" font-weight="700" fill="#1f2933">CLI / main.ts</text>
-    <text x="60" y="217" font-size="17" fill="#52616b">parseArgs</text>
-<text x="60" y="243" font-size="17" fill="#52616b">createAgentSession options</text>
+  <rect x="24" y="24" width="1152" height="672" rx="24" fill="#ffffff" opacity="0.72" stroke="#d7dee5"/>
+
+  <g class="sans">
+    <text x="56" y="74" class="title">Pi 的最小内核和扩展边界</text>
+    <text x="56" y="108" class="subtitle">入口可以很多，能力来源也可以扩展，但工具可见性和 prompt 重建都收敛到 AgentSession。</text>
+
+    <g id="entry-zone">
+      <rect x="64" y="156" width="250" height="330" rx="18" class="zone"/>
+      <text x="88" y="192" class="zone-title">入口层只做翻译</text>
+      <text x="88" y="218" class="small">不直接拥有工具运行时</text>
+
+      <rect x="88" y="244" width="202" height="72" rx="14" class="card" stroke="#2f6fbb"/>
+      <text x="108" y="276" class="card-title">CLI / main.ts</text>
+      <text x="108" y="302" class="body">parseArgs → options</text>
+
+      <path d="M189 320 L189 348" class="soft-arrow"/>
+      <text x="202" y="342" class="small">交给 SDK</text>
+
+      <rect x="88" y="360" width="202" height="76" rx="14" class="card" stroke="#16857a"/>
+      <text x="108" y="392" class="card-title">SDK / sdk.ts</text>
+      <text x="108" y="418" class="body">initialActiveToolNames</text>
+    </g>
+
+    <g id="session-zone">
+      <rect x="374" y="136" width="430" height="410" rx="20" fill="#fffaf0" stroke="#b97819" stroke-width="3"/>
+      <text x="402" y="176" class="zone-title">AgentSession 运行时所有权边界</text>
+      <text x="402" y="204" class="small">统一决定工具来源、可见性、执行包装和 prompt 文本</text>
+
+      <rect x="408" y="232" width="362" height="68" rx="14" class="card" stroke="#b97819"/>
+      <text x="430" y="261" class="card-title">Definition Registry</text>
+      <text x="430" y="286" class="body">builtin / extension / SDK tool definitions</text>
+
+      <path d="M589 305 L589 328" class="soft-arrow"/>
+      <text x="604" y="323" class="small">wrap + sourceInfo</text>
+
+      <rect x="408" y="336" width="362" height="68" rx="14" class="card" stroke="#7556a5"/>
+      <text x="430" y="365" class="card-title">Tool Registry</text>
+      <text x="430" y="390" class="body">可执行 AgentTool，带统一 runner context</text>
+
+      <path d="M589 409 L589 432" class="soft-arrow"/>
+      <text x="604" y="427" class="small">select active</text>
+
+      <rect x="408" y="440" width="362" height="74" rx="14" class="card" stroke="#bd4b4b"/>
+      <text x="430" y="470" class="card-title">Active Tools + Prompt Builder</text>
+      <text x="430" y="496" class="body">只把 active tools 写进系统提示词</text>
+    </g>
+
+    <g id="source-zone">
+      <rect x="862" y="156" width="274" height="330" rx="18" class="zone"/>
+      <text x="886" y="192" class="zone-title">能力来源可以增长</text>
+      <text x="886" y="218" class="small">但不能绕过 registry</text>
+
+      <rect x="886" y="244" width="226" height="58" rx="13" class="card" stroke="#3f8b4f"/>
+      <text x="906" y="270" class="card-title">内置工具 definitions</text>
+      <text x="906" y="292" class="small">read / bash / edit / write</text>
+
+      <rect x="886" y="324" width="226" height="58" rx="13" class="card" stroke="#7556a5"/>
+      <text x="906" y="350" class="card-title">ExtensionRunner</text>
+      <text x="906" y="372" class="small">registered tools + hooks</text>
+
+      <rect x="886" y="404" width="226" height="58" rx="13" class="card" stroke="#16857a"/>
+      <text x="906" y="430" class="card-title">SDK custom tools</text>
+      <text x="906" y="452" class="small">sourceInfo: &lt;sdk:name&gt;</text>
+    </g>
+
+    <path d="M290 398 C330 398, 334 278, 408 266" class="arrow"/>
+    <rect x="318" y="330" width="76" height="28" rx="14" fill="#f7fafc" stroke="#d7dee5"/>
+    <text x="356" y="350" text-anchor="middle" class="label">options</text>
+
+    <path d="M862 318 C830 318, 808 266, 770 266" class="arrow"/>
+    <rect x="780" y="290" width="84" height="28" rx="14" fill="#f7fafc" stroke="#d7dee5"/>
+    <text x="822" y="310" text-anchor="middle" class="label">definitions</text>
+
+    <rect x="374" y="568" width="430" height="74" rx="18" fill="#fff7f2" stroke="#bd4b4b" stroke-width="2.5"/>
+    <text x="402" y="598" class="card-title">System Prompt</text>
+    <text x="402" y="624" class="body">模型只看当前 active tools；工具变化后同步 rebuild。</text>
+    <path d="M589 514 L589 568" class="arrow"/>
+    <text x="606" y="548" class="label">rebuild</text>
+
+    <rect x="56" y="656" width="1088" height="34" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
+    <text x="76" y="679" class="label" fill="#6b4a10">启发：先定运行时所有权边界，再接入 CLI、SDK、扩展和工具生态；不要让每个入口各自拼工具数组。</text>
   </g>
-<g id="sdk">
-    <rect x="310" y="145" width="210" height="110" rx="16" fill="#ffffff" stroke="#16857a" stroke-width="3"/>
-    <rect x="310" y="145" width="210" height="42" rx="16" fill="#16857a" opacity="0.12"/>
-    <text x="330" y="174" font-size="22" font-weight="700" fill="#1f2933">SDK / sdk.ts</text>
-    <text x="330" y="217" font-size="17" fill="#52616b">model + settings</text>
-<text x="330" y="243" font-size="17" fill="#52616b">initialActiveToolNames</text>
-  </g>
-<g id="session">
-    <rect x="585" y="105" width="260" height="190" rx="16" fill="#ffffff" stroke="#b97819" stroke-width="3"/>
-    <rect x="585" y="105" width="260" height="42" rx="16" fill="#b97819" opacity="0.12"/>
-    <text x="605" y="134" font-size="22" font-weight="700" fill="#1f2933">AgentSession</text>
-    <text x="605" y="177" font-size="17" fill="#52616b">_buildRuntime()</text>
-<text x="605" y="203" font-size="17" fill="#52616b">_refreshToolRegistry()</text>
-<text x="605" y="229" font-size="17" fill="#52616b">setActiveToolsByName()</text>
-  </g>
-<g id="builtin">
-    <rect x="910" y="80" width="230" height="105" rx="16" fill="#ffffff" stroke="#3f8b4f" stroke-width="3"/>
-    <rect x="910" y="80" width="230" height="42" rx="16" fill="#3f8b4f" opacity="0.12"/>
-    <text x="930" y="109" font-size="22" font-weight="700" fill="#1f2933">内置工具</text>
-    <text x="930" y="152" font-size="17" fill="#52616b">read</text>
-<text x="930" y="178" font-size="17" fill="#52616b">bash</text>
-<text x="930" y="204" font-size="17" fill="#52616b">edit</text>
-<text x="930" y="230" font-size="17" fill="#52616b">write</text>
-  </g>
-<g id="ext">
-    <rect x="910" y="220" width="230" height="120" rx="16" fill="#ffffff" stroke="#7556a5" stroke-width="3"/>
-    <rect x="910" y="220" width="230" height="42" rx="16" fill="#7556a5" opacity="0.12"/>
-    <text x="930" y="249" font-size="22" font-weight="700" fill="#1f2933">扩展 / SDK 工具</text>
-    <text x="930" y="292" font-size="17" fill="#52616b">ExtensionRunner</text>
-<text x="930" y="318" font-size="17" fill="#52616b">wrapRegisteredTools</text>
-  </g>
-<g id="prompt">
-    <rect x="585" y="405" width="260" height="125" rx="16" fill="#ffffff" stroke="#bd4b4b" stroke-width="3"/>
-    <rect x="585" y="405" width="260" height="42" rx="16" fill="#bd4b4b" opacity="0.12"/>
-    <text x="605" y="434" font-size="22" font-weight="700" fill="#1f2933">System Prompt</text>
-    <text x="605" y="477" font-size="17" fill="#52616b">只列 active tools</text>
-<text x="605" y="503" font-size="17" fill="#52616b">context + skills</text>
-  </g>
-<path d="M 245 200 C 277.5 200, 277.5 200, 310 200" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
-  <text x="277.5" y="192" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">options</text>
-<path d="M 520 200 C 552.5 200, 552.5 200, 585 200" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
-  <text x="552.5" y="192" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">创建会话</text>
-<path d="M 845 200 C 877.5 200, 877.5 132.5, 910 132.5" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
-  <text x="877.5" y="158.25" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">base defs</text>
-<path d="M 845 200 C 877.5 200, 877.5 280, 910 280" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
-  <text x="877.5" y="232" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">registered tools</text>
-<path d="M 845 295 C 715 295, 715 405, 585 405" fill="none" stroke="#9aa7b2" stroke-width="2.4" marker-end="url(#arrow)"/>
-  <text x="715" y="342" text-anchor="middle" font-size="15" fill="#52616b" paint-order="stroke" stroke="#fbfaf7" stroke-width="5">rebuild</text>
-  </g>
-  <rect x="48" y="626" width="1104" height="44" rx="12" fill="#fff8e7" stroke="#e0c88d"/>
-  <text x="68" y="654" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif" font-size="18" font-weight="700" fill="#6b4a10">可迁移判断：工具越少，边界越清楚；扩展只能通过注册表进入运行时。</text>
 </svg>
